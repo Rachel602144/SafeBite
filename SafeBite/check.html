@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Food Safety - SafeBite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="check-section">
+  <div class="check-card">
+    <h2>Check Food Safety</h2>
+    <p>Enter ingredients to detect allergy risks.</p>
+
+    <form class="check-form">
+      <input type="text" id="foodName" placeholder="Food Name" required>
+
+      <textarea id="ingredients" placeholder="Enter ingredients (comma separated)" required></textarea>
+     <input type="date" id="expiryDate" placeholder ="Add expiry date" required>
+      <button type="submit" class="btn primary">
+        Analyze Food
+      </button>
+    </form>
+
+    <p id="result"></p>
+  </div>
+</section>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
