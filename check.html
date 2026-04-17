@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Food Safety - SafeBite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <nav class="nav" aria-label="Primary"></nav>
+
+    <div class="header-actions">
+      <a class="btn primary small" href="dashboard.html">Dashboard</a>
+      <a class="btn primary small" href="insights.html">Insights</a>
+    </div>
+  </div>
+</header>
+
+<section class="check-section">
+  <div class="check-card">
+    <h2>Check Food Safety</h2>
+    <p>Enter ingredients to detect potential consumption risks.</p>
+
+    <form class="check-form">
+      <input type="text" id="foodName" placeholder="Food Name" required>
+
+      <textarea id="ingredients" placeholder="Enter ingredients (comma separated)"></textarea>
+      <input type="file" id="imageUpload" accept="image/*" capture="environment">
+     <input type="date" id="expiryDate" placeholder ="Add expiry date" required>
+      <button type="submit" class="btn primary">Analyze Food</button>
+    </form>
+
+    <p id="result"></p>
+    <div id="scoreContainer" style="display:none; margin-top: 20px; padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      <h3 style="margin: 0; font-size: 24px;">Safety Score: <span id="safetyScoreValue">100</span>/100</h3>
+      <p id="recommendationTextCheck" style="margin-top: 12px; color: var(--text); font-size: 15px; line-height: 1.5; font-weight: 500;"></p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

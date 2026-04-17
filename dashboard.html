@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeBite Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="dashboard-section">
+  <div class="dashboard-card">
+    <h2>Food Safety Analytics Dashboard</h2>
+
+
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <h3 id="totalChecks">0</h3>
+        <p>Total Foods Checked</p>
+      </div>
+
+      <div class="stat-box">
+        <h3 id="safeCount">0</h3>
+        <p>Safe Foods</p>
+      </div>
+
+      <div class="stat-box">
+        <h3 id="allergyCount">0</h3>
+        <p>Allergy Alerts</p>
+      </div>
+
+      <div class="stat-box">
+        <h3 id="expiredCount">0</h3>
+        <p>Expired Products</p>
+      </div>
+
+      <div class="stat-box">
+        <h3 id="safePercent">0%</h3>
+        <p>Safety Rate</p>
+      </div>
+
+    </div> 
+
+    
+    <div class="chart-section">
+      <canvas id="safetyChart" height="400"></canvas>
+    </div>
+
+    <div class="dashboard-actions" style="display: flex; justify-content: center; gap: 1rem; align-items: center; margin-top: 20px;">
+      <button id="clearHistory" class="btn danger">Clear Data</button>
+      <a href="insights.html" class="btn primary">View Insights</a>
+    </div>
+
+
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

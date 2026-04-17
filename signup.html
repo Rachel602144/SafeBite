@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Account - SafeBite</title>
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+  <section class="auth-section">
+    <div class="auth-card">
+      <h2 class="auth-title">Create Your Account</h2>
+
+
+
+      <form class="auth-form">
+        <div style="position: relative; display: flex; align-items: center;">
+          <input type="text" id="name" placeholder="Full Name" required style="width: 100%; box-sizing: border-box;" />
+          <span id="nameError"
+            style="position: absolute; right: 10px; color: #ff4444; font-size: 12px; display: none;">name should not be
+            whitespace</span>
+        </div>
+        <div style="position: relative; display: flex; align-items: center;">
+          <input type="email" id="email" placeholder="Email Address" required
+            style="width: 100%; box-sizing: border-box;" />
+          <span id="emailError"
+            style="position: absolute; right: 10px; color: #ff4444; font-size: 12px; display: none;">email should
+            contain @ symbol</span>
+        </div>
+        <div style="position: relative; display: flex; align-items: center;">
+          <input type="password" id="password" placeholder="Password" required
+            style="width: 100%; box-sizing: border-box;" />
+          <span id="passwordError"
+            style="position: absolute; right: 10px; color: #ff4444; font-size: 12px; display: none;">password must be
+            8-10 characters</span>
+        </div>
+        <div style="position: relative; display: flex; align-items: center;">
+          <input type="password" id="verifyPassword" placeholder="Verify Password" required
+            style="width: 100%; box-sizing: border-box;" />
+          <span id="verifyPasswordError"
+            style="position: absolute; right: 10px; color: #ff4444; font-size: 12px; display: none;">passwords must
+            match</span>
+        </div>
+        
+        <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--copy); font-size: 13px; margin-bottom: 10px;">
+          <input type="checkbox" id="showPassword" style="width: auto; margin: 0;" /> Show Password
+        </label>
+        
+        <div style="display: flex; gap: 15px; align-items: center; color: var(--copy); font-size: 14px;">
+          <span style="font-weight: 600;">Gender:</span>
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="radio" name="gender" value="Male" required style="width: auto;" /> Male
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="radio" name="gender" value="Female" required style="width: auto;" /> Female
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="radio" name="gender" value="Other" required style="width: auto;" /> Other
+          </label>
+        </div>
+
+        <input type="text" id="allergies" placeholder="Allergies (comma separated)" />
+        <label for="medicalCondition">Select Medical Condition:</label>
+        <select id="medicalCondition" required>
+          <option value="">-- Select Condition --</option>
+          <option value="None">None</option>
+          <option value="Diabetes">Diabetes</option>
+          <option value="Hypertension">Hypertension</option>
+          <option value="Lactose Intolerance">Lactose Intolerance</option>
+          <option value="High Cholesterol">High Cholesterol</option>
+        </select>
+
+        <label style="display: flex; align-items: center; gap: 6px; margin-top: 15px; margin-bottom: 5px; cursor: pointer; color: var(--copy); font-size: 14px;">
+          <input type="checkbox" id="rememberMe" style="width: auto; margin: 0;"> Remember me
+        </label>
+
+        <button class="btn primary" type="submit" style="margin-top: 10px;">Create Account</button>
+      </form>
+
+      <p style="margin-top: 20px; color: var(--muted); font-size: 14px;">
+        Already have an account? <a href="login.html"
+          style="color: var(--accent); text-decoration: none; font-weight: 600;">Log in</a>
+      </p>
+    </div>
+  </section>
+  <script src="app.js"></script>
+
+</body>
+
+</html>

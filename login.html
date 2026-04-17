@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login - SafeBite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <h2 class="auth-title">Welcome Back</h2>
+      <p class="auth-sub">Log in to SafeBite to continue</p>
+
+      <form id="loginForm" class="auth-form">
+
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="password" id="password" placeholder="Password" required />
+
+        <button type="submit" class="btn primary" style="margin-top: 10px;">Login</button>
+
+      </form>
+
+      <p style="margin-top: 20px; color: var(--muted); font-size: 14px;">
+        Don't have an account? <a href="signup.html"
+          style="color: var(--accent); text-decoration: none; font-weight: 600;">Sign up</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("http://localhost:5000/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        alert(data.message);
+
+        if (data.message === "Login successful") {
+          localStorage.setItem("token", data.token);
+          
+          const users = JSON.parse(localStorage.getItem("users")) || [];
+          users.push(data.user);
+          localStorage.setItem("users", JSON.stringify(users));
+
+          window.location.href = "check.html";
+        }
+
+      } catch (err) {
+        alert("Server error");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
